@@ -4,10 +4,10 @@ import java.util.Iterator;
 
 public class MyLinkedList <T> implements MyList<T>{
 
-    private MyLinkedListElement<T> firstElement;
+    MyLinkedListElement<T> firstElement;
     private MyLinkedListElement<T> lastElement;
 
-    public static <T> MyList<T> of(T... values){
+    public static <T> MyLinkedList<T> of(T... values){
         MyLinkedList<T> result = new MyLinkedList<>();
 
         for (T value: values){
@@ -50,7 +50,11 @@ public class MyLinkedList <T> implements MyList<T>{
     }
 
     @Override
-    public MyList<T> rest() {
+    public MyList<T> rest(){
+        if (this.isEmpty()){
+            throw new EmptyListException();
+        }
+
         MyLinkedList<T> result = new MyLinkedList<>();
 
         result.firstElement = this.firstElement.next;
@@ -77,6 +81,6 @@ public class MyLinkedList <T> implements MyList<T>{
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new MyLinkedListIterator<>(this);
     }
 }
