@@ -3,9 +3,6 @@ package org.example;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -41,13 +38,17 @@ public class MyLinkedListTest {
     @Test
     public void equalsTest() {
         assertEquals(MyLinkedList.of(), MyLinkedList.of());
+
+        assertNotEquals(MyLinkedList.of(1, 2, 3, 4, 5), MyLinkedList.of(1, 2, 3, 4));
+
+        assertEquals(MyLinkedList.of(1,2,3), MyLinkedList.of(1,2).append(3));
     }
 
     @Test
     public void iteratorTest() {
         MyList<Integer> list1 = MyLinkedList.of(1, 2, 3);
 
-        for (Integer value: list1){
+        for (Integer value : list1) {
             System.out.println(value);
         }
 

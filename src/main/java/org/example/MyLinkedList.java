@@ -1,16 +1,14 @@
 package org.example;
 
-import java.util.Iterator;
-
-public class MyLinkedList <T> implements MyList<T>{
+public class MyLinkedList<T> implements MyList<T> {
 
     private MyLinkedListElement<T> firstElement;
     private MyLinkedListElement<T> lastElement;
 
-    public static <T> MyLinkedList<T> of(T... values){
+    public static <T> MyLinkedList<T> of(T... values) {
         MyLinkedList<T> result = new MyLinkedList<>();
 
-        for (T value: values){
+        for (T value : values) {
             result.append(value);
         }
 
@@ -19,7 +17,7 @@ public class MyLinkedList <T> implements MyList<T>{
 
     @Override
     public MyList<T> append(T value) {
-        if (this.isEmpty()){
+        if (this.isEmpty()) {
             return this.push(value);
         }
 
@@ -50,8 +48,8 @@ public class MyLinkedList <T> implements MyList<T>{
     }
 
     @Override
-    public MyList<T> rest(){
-        if (this.isEmpty()){
+    public MyList<T> rest() {
+        if (this.isEmpty()) {
             throw new EmptyListException();
         }
 
@@ -70,13 +68,44 @@ public class MyLinkedList <T> implements MyList<T>{
 
         newElement.next = this.firstElement;
 
-        if (this.isEmpty()){
+        if (this.isEmpty()) {
             this.lastElement = newElement;
         }
 
         this.firstElement = newElement;
 
         return this;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+
+        if (object == null) {
+            return false;
+        }
+
+        if (!(object instanceof MyList)) {
+            return false;
+        }
+
+        MyList<T> that = (MyList<T>) object;
+
+        for (T value : this) {
+            if (that.isEmpty()) {
+                return false;
+            }
+
+            if (!value.equals(that.first())) {
+                return false;
+            }
+            that = that.rest();
+        }
+
+        if (!that.isEmpty()) {
+            return false;
+        }
+
+        return true;
     }
 
 }
