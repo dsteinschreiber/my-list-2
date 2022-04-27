@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class MyLinkedList <T> implements MyList<T>{
 
-    MyLinkedListElement<T> firstElement;
+    private MyLinkedListElement<T> firstElement;
     private MyLinkedListElement<T> lastElement;
 
     public static <T> MyLinkedList<T> of(T... values){
@@ -79,8 +79,4 @@ public class MyLinkedList <T> implements MyList<T>{
         return this;
     }
 
-    @Override
-    public Iterator<T> iterator() {
-        return new MyLinkedListIterator<>(this);
-    }
 }
