@@ -92,6 +92,20 @@ public class MyLinkedListTest {
 
     @Disabled
     @Test
+    public void toStringTest() {
+        System.out.println(MyLinkedList.of("Hello", "world"));
+        System.out.println(MyLinkedList.of(1,2,3).toString());
+        System.out.println(MyLinkedList.of().toString());
+    }
+
+    @Test
+    public void fromTest(){
+        assertEquals(MyLinkedList.of('H','e','l','l','o'), MyLinkedList.from("Hello"));
+        assertTrue(MyLinkedList.from("").isEmpty());
+    }
+
+    @Disabled
+    @Test
     public void genericTest() {
         assertTrue(Integer.valueOf(1) == Integer.valueOf(1));
         assertTrue("Hello" == "Hello");

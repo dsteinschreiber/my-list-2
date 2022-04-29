@@ -18,6 +18,16 @@ public class MyLinkedList<T> implements MyList<T> {
         return result;
     }
 
+    public static  MyLinkedList<Character> from(String string){
+        MyLinkedList<Character> result = new MyLinkedList<>();
+
+        for (char c: string.toCharArray()){
+            result.append(c);
+        }
+
+        return result;
+    }
+
     @Override
     public MyList<T> append(T value) {
         if (this.isEmpty()) {
@@ -178,6 +188,24 @@ public class MyLinkedList<T> implements MyList<T> {
 
         return false;
     }
+
+    @Override
+    public String toString(){
+        String result = "[";
+
+        String delimiter = "";
+
+        for (T value: this){
+            result = result + delimiter + value;
+            delimiter = ", ";
+        }
+
+        result = result + "]";
+
+        return result;
+    }
+
+
 
 
 }

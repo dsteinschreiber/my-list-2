@@ -11,4 +11,35 @@ public class MyListUtils {
         return result;
     }
 
+    public static String toString(MyLinkedList<Character> list){
+//        String result = "";
+//
+//        for (Character c: list){
+//            result = result + c;
+//        }
+//
+//        return result;
+
+        return list.reduce("", (result, value) -> result + value);
+
+    }
+
+
+
+    public static <T> MyList<T> longestCommonPrefix(MyList<T>... lists){
+//        String result = "";
+//
+//        MyList<String> checkingList = new MyLinkedList<>();
+//
+//        for (MyList<String> list: lists){
+//
+//
+//        }
+//
+//
+//
+//        return result;
+        return null;
+    }
+
 }
