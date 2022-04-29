@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.example.MyListUtils.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MyListUtilsTest {
 
@@ -23,6 +22,12 @@ public class MyListUtilsTest {
         assertEquals("", MyListUtils.toString(MyLinkedList.from("")));
     }
 
+    @Test
+    public void allEqualsTest() {
+        assertTrue(allEquals("ssss"));
+        assertFalse(allEquals("sssa"));
+        assertTrue(allEquals(""));
+    }
 
     @Disabled
     @Test

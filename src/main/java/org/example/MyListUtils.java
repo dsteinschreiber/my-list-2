@@ -24,6 +24,10 @@ public class MyListUtils {
 
     }
 
+    public static boolean allEquals (String string){
+        return MyLinkedList.from(string).allEquals();
+    }
+
 
 
     public static <T> MyList<T> longestCommonPrefix(MyList<T>... lists){
