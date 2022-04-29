@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class MyLinkedList<T> implements MyList<T> {
@@ -58,6 +59,8 @@ public class MyLinkedList<T> implements MyList<T> {
         MyLinkedList<T> result = new MyLinkedList<>();
 
         result.firstElement = this.firstElement.next;
+
+        result.lastElement = this.lastElement;
 
         return result;
     }
@@ -119,6 +122,48 @@ public class MyLinkedList<T> implements MyList<T> {
         }
 
         return result;
+    }
+
+    @Override
+    public <V> V reduce(V initialValue, BiFunction<V, T, V> accumulator) {
+        V result = initialValue;
+
+        for (T value: this){
+            result = accumulator.apply(result, value);
+        }
+
+        return result;
+    }
+
+    @Override
+    public boolean all(Function<T, Boolean> predicate) {
+
+        for (T value: this){
+            if (!predicate.apply(value)){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    @Override
+    public boolean allEquals() {
+
+        MyList<T> comparedList = this;
+
+        for (T value: this){
+            if (comparedList.rest().isEmpty()){
+                break;
+            }
+
+            if (!value.equals(comparedList.rest().first())){
+                return false;
+            }
+            comparedList = comparedList.rest();
+        }
+
+        return true;
     }
 
 

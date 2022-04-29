@@ -28,6 +28,8 @@ public class MyLinkedListTest {
     @Test
     public void restTest() {
         assertThrows(EmptyListException.class, () -> MyLinkedList.of().rest());
+        assertTrue(MyLinkedList.of(1).rest().isEmpty());
+        assertTrue(MyLinkedList.of(1, 2).rest().rest().isEmpty());
     }
 
     @Test
@@ -60,6 +62,26 @@ public class MyLinkedListTest {
         assertEquals(MyLinkedList.of(), MyLinkedList.of(1).rest().map(value -> value * 2));
     }
 
+    @Test
+    public void reduceTest() {
+        assertEquals(6, MyLinkedList.of(1, 2, 3)
+                .reduce(0, (result, value) -> result + value));
+        assertEquals(0, MyLinkedList.of(1).rest()
+                .reduce(0, (result, value) -> result + value));
+    }
+
+    @Test
+    public void allTest() {
+        assertTrue(MyLinkedList.of(1, 2, 3).all(value -> value > 0));
+        assertTrue(MyLinkedList.of(1).rest().all(value -> value > 0));
+    }
+
+    @Test
+    public void allEqualsTest() {
+        assertTrue(MyLinkedList.of(1, 1, 1).allEquals());
+        assertFalse(MyLinkedList.of(1, 1, 1, 2).allEquals());
+        assertTrue(MyLinkedList.of().allEquals());
+    }
 
     @Disabled
     @Test

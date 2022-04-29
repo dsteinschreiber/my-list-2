@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Iterator;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public interface MyList<T> extends Iterable<T> {
@@ -39,4 +40,11 @@ public interface MyList<T> extends Iterable<T> {
     }
 
     <V> MyList<V> map(Function<T, V> mapper);
+
+    <V> V reduce(V initialValue, BiFunction<V, T, V> accumulator);
+
+    boolean all(Function<T, Boolean> predicate);
+
+    boolean allEquals();
+
 }
