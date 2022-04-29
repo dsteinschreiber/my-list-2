@@ -83,6 +83,13 @@ public class MyLinkedListTest {
         assertTrue(MyLinkedList.of().allEquals());
     }
 
+    @Test
+    public void anyTest() {
+        assertTrue(MyLinkedList.of(-1, -2, 3).any(value -> value > 0));
+        assertFalse(MyLinkedList.of(-1, -2, -3).any(value -> value > 0));
+        assertFalse(MyLinkedList.of(1).rest().any(value -> value > 0));
+    }
+
     @Disabled
     @Test
     public void genericTest() {

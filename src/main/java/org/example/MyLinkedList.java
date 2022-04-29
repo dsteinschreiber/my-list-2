@@ -167,4 +167,17 @@ public class MyLinkedList<T> implements MyList<T> {
     }
 
 
+    @Override
+    public boolean any(Function<T, Boolean> predicate) {
+
+        for (T value: this){
+            if (predicate.apply(value)){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
 }

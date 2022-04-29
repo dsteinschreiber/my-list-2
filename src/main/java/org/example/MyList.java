@@ -47,4 +47,6 @@ public interface MyList<T> extends Iterable<T> {
 
     boolean allEquals();
 
+    boolean any(Function<T, Boolean> predicate);
+
 }
