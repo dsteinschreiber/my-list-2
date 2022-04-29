@@ -41,7 +41,7 @@ public class MyLinkedListTest {
 
         assertNotEquals(MyLinkedList.of(1, 2, 3, 4, 5), MyLinkedList.of(1, 2, 3, 4));
 
-        assertEquals(MyLinkedList.of(1,2,3), MyLinkedList.of(1,2).append(3));
+        assertEquals(MyLinkedList.of(1, 2, 3), MyLinkedList.of(1, 2).append(3));
     }
 
     @Test
@@ -52,6 +52,12 @@ public class MyLinkedListTest {
             System.out.println(value);
         }
 
+    }
+
+    @Test
+    public void mapTest() {
+        assertEquals(MyLinkedList.of(2, 4, 6), MyLinkedList.of(1, 2, 3).map(value -> value * 2));
+        assertEquals(MyLinkedList.of(), MyLinkedList.of(1).rest().map(value -> value * 2));
     }
 
 

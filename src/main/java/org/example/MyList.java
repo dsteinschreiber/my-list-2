@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Iterator;
+import java.util.function.Function;
 
 public interface MyList<T> extends Iterable<T> {
     MyList<T> append(T value);
@@ -36,4 +37,6 @@ public interface MyList<T> extends Iterable<T> {
             }
         };
     }
+
+    <V> MyList<V> map(Function<T, V> mapper);
 }

@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.function.Function;
+
 public class MyLinkedList<T> implements MyList<T> {
 
     private MyLinkedListElement<T> firstElement;
@@ -107,5 +109,17 @@ public class MyLinkedList<T> implements MyList<T> {
 
         return true;
     }
+
+    @Override
+    public <V> MyList<V> map(Function<T, V > mapper){
+        MyList<V> result = new MyLinkedList<V>();
+
+        for (T value: this){
+            result.append(mapper.apply(value));
+        }
+
+        return result;
+    }
+
 
 }
