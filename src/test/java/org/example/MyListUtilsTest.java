@@ -3,6 +3,8 @@ package org.example;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import static org.example.MyLinkedList.from;
+import static org.example.MyLinkedList.of;
 import static org.example.MyListUtils.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,9 +13,15 @@ public class MyListUtilsTest {
     @Test
     public void allFirstsTest() {
         assertEquals(MyLinkedList.of(1, 2, 3),
-                allFirsts(MyLinkedList.of(1, 2, 3),
+                allFirsts(of(MyLinkedList.of(1, 2, 3),
                         MyLinkedList.of(2, 3, 4),
-                        MyLinkedList.of(3, 4, 5)));
+                        MyLinkedList.of(3, 4, 5))));
+    }
+
+    @Test
+    public void allRestsTest() {
+        assertEquals(of(from("ssert"), from("ssembly"), from("ssassin")),
+                allRests(of(from("assert"), from("assembly"), from("assassin"))));
     }
 
     @Test
@@ -29,10 +37,10 @@ public class MyListUtilsTest {
         assertTrue(allEquals(""));
     }
 
-    @Disabled
     @Test
-    public void longestCommonPrefixTest() {
-        assertEquals("ass", longestCommonPrefix(MyLinkedList.of("assassin","assembly", "assert")));
-        assertEquals("", longestCommonPrefix(MyLinkedList.of()));
+    public void longestCommonPrefixLengthTest() {
+        assertEquals(3, longestCommonPrefixLength(of(from("assassin"), from("assert"), from("assembly"))));
+        assertEquals(0, longestCommonPrefixLength(of(from("assassin"), from(""), from("assert"))));
+        assertEquals(0, longestCommonPrefixLength(MyLinkedList.of()));
     }
 }

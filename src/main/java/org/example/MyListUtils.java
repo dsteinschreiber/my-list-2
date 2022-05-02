@@ -1,17 +1,29 @@
 package org.example;
 
 public class MyListUtils {
-    public static <T> MyList<T> allFirsts(MyList<T>... lists){
-        MyList<T> result = new MyLinkedList<>();
+    public static <T> MyList<T> allFirsts(MyList<MyList<T>> lists) {
+        MyList<T> methodResult = new MyLinkedList<>();
 
-        for (MyList<T> list: lists){
-            result.append(list.first());
-        }
+//        for (MyList<T> list: lists){
+//            methodResult.append(list.first());
+//        }
 
-        return result;
+        return lists.reduce(methodResult, (result, value) -> result.append(value.first()));
     }
 
-    public static String toString(MyLinkedList<Character> list){
+    public static <T> MyList<MyList<T>> allRests(MyList<MyList<T>> lists) {
+        MyList<MyList<T>> results = new MyLinkedList<>();
+//
+//        for (MyList<T> list: lists){
+//            results.append(list.rest());
+//        }
+
+        return lists.reduce(results, (result, value) -> result.append(value.rest()));
+
+    }
+
+
+    public static String toString(MyLinkedList<Character> list) {
 //        String result = "";
 //
 //        for (Character c: list){
@@ -24,26 +36,25 @@ public class MyListUtils {
 
     }
 
-    public static boolean allEquals (String string){
+    public static boolean allEquals(String string) {
         return MyLinkedList.from(string).allEquals();
     }
 
+    public static <T> int longestCommonPrefixLength(MyList<MyList<T>> lists) {
+        int result = 0;
 
+        MyList<MyList<T>> rests = lists;
 
-    public static <T> MyList<T> longestCommonPrefix(MyList<T>... lists){
-//        String result = "";
-//
-//        MyList<String> checkingList = new MyLinkedList<>();
-//
-//        for (MyList<String> list: lists){
-//
-//
-//        }
-//
-//
-//
-//        return result;
-        return null;
+        if (lists.isEmpty()) {
+            return result;
+        }
+
+        while (!rests.any(value -> value.isEmpty()) && allFirsts(rests).allEquals()) {
+            result++;
+            rests = allRests(rests);
+        }
+
+        return result;
     }
 
 }
