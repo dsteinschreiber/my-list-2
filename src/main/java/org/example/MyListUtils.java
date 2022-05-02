@@ -1,5 +1,7 @@
 package org.example;
 
+import static org.example.MyLinkedList.from;
+
 public class MyListUtils {
     public static <T> MyList<T> allFirsts(MyList<MyList<T>> lists) {
         MyList<T> methodResult = new MyLinkedList<>();
@@ -37,7 +39,7 @@ public class MyListUtils {
     }
 
     public static boolean allEquals(String string) {
-        return MyLinkedList.from(string).allEquals();
+        return from(string).allEquals();
     }
 
     public static <T> int longestCommonPrefixLength(MyList<MyList<T>> lists) {
@@ -55,6 +57,32 @@ public class MyListUtils {
         }
 
         return result;
+    }
+
+    public static String longestCommonPrefix(String... strings){
+        MyList<MyList<Character>> listOfCharList = new MyLinkedList<>();
+
+        String result = "";
+
+        if (strings.length == 0){
+            return result;
+        }
+
+        for (String string: strings){
+            listOfCharList.append(from(string));
+        }
+
+        int counter = longestCommonPrefixLength(listOfCharList);
+
+        MyList<Character> myFirst = listOfCharList.first();
+
+        for (int i = 0; i < counter; i++){
+            result = result + myFirst.first();
+            myFirst = myFirst.rest();
+        }
+
+        return result;
+
     }
 
 }

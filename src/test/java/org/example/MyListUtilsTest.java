@@ -43,4 +43,13 @@ public class MyListUtilsTest {
         assertEquals(0, longestCommonPrefixLength(of(from("assassin"), from(""), from("assert"))));
         assertEquals(0, longestCommonPrefixLength(MyLinkedList.of()));
     }
+
+    @Test
+    public void longestCommonPrefixTest() {
+        assertEquals("ass", longestCommonPrefix("assassin", "assert", "assembly"));
+        assertEquals("", longestCommonPrefix(""));
+        assertEquals("", longestCommonPrefix("assassin","whimberly","driftwood"));
+        assertEquals("", longestCommonPrefix());
+
+    }
 }
