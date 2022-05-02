@@ -48,8 +48,7 @@ public class MyListUtilsTest {
     public void longestCommonPrefixTest() {
         assertEquals("ass", longestCommonPrefix("assassin", "assert", "assembly"));
         assertEquals("", longestCommonPrefix(""));
-        assertEquals("", longestCommonPrefix("assassin","whimberly","driftwood"));
+        assertEquals("", longestCommonPrefix("assassin", "whimberly", "driftwood"));
         assertEquals("", longestCommonPrefix());
-
     }
 }

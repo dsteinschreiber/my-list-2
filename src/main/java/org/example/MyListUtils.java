@@ -59,16 +59,16 @@ public class MyListUtils {
         return result;
     }
 
-    public static String longestCommonPrefix(String... strings){
+    public static String longestCommonPrefix(String... strings) {
         MyList<MyList<Character>> listOfCharList = new MyLinkedList<>();
 
         String result = "";
 
-        if (strings.length == 0){
+        if (strings.length == 0) {
             return result;
         }
 
-        for (String string: strings){
+        for (String string : strings) {
             listOfCharList.append(from(string));
         }
 
@@ -76,13 +76,12 @@ public class MyListUtils {
 
         MyList<Character> myFirst = listOfCharList.first();
 
-        for (int i = 0; i < counter; i++){
+        for (int i = 0; i < counter; i++) {
             result = result + myFirst.first();
             myFirst = myFirst.rest();
         }
 
         return result;
-
     }
 
 }
