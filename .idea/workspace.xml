@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff17e244-cea2-4b4c-a27e-f76a801299aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MyArrayBasedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/MyArrayBasedListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MySortedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyArrayBasedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyArrayBasedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MyArrayBasedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MyArrayBasedListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +37,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="JUnit.MyArrayBasedListTest.firstTest">
-    <configuration name="MyArrayBasedListTest.firstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MyArrayBasedListTest.randomTest">
+    <configuration name="MyArrayBasedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-list-2" />
       <extension name="coverage">
         <pattern>
@@ -55,7 +51,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.MyArrayBasedListTest" />
-      <option name="METHOD_NAME" value="firstTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyArrayBasedListTest.containsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-list-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MyArrayBasedListTest" />
+      <option name="METHOD_NAME" value="containsTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -77,10 +88,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyArrayBasedListTest.randomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-list-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MyArrayBasedListTest" />
+      <option name="METHOD_NAME" value="randomTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyArrayBasedListTest.sortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-list-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MyArrayBasedListTest" />
+      <option name="METHOD_NAME" value="sortTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MyArrayBasedListTest.firstTest" />
+        <item itemvalue="JUnit.MyArrayBasedListTest.randomTest" />
+        <item itemvalue="JUnit.MyArrayBasedListTest.containsTest" />
         <item itemvalue="JUnit.MyArrayBasedListTest.isEmptyTest" />
+        <item itemvalue="JUnit.MyArrayBasedListTest.sortTest" />
+        <item itemvalue="JUnit.MyArrayBasedListTest" />
       </list>
     </recent_temporary>
   </component>
@@ -95,7 +141,7 @@
       <workItem from="1652139175035" duration="12000" />
       <workItem from="1652139334434" duration="26000" />
       <workItem from="1652139396245" duration="6000" />
-      <workItem from="1652139410277" duration="2365000" />
+      <workItem from="1652139410277" duration="12703000" />
     </task>
     <servers />
   </component>

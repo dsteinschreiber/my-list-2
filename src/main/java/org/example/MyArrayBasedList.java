@@ -1,22 +1,30 @@
 package org.example;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-public class MyArrayBasedList<T> implements MyList<T>{
+public class MyArrayBasedList<T extends Comparable<T>> implements MyList<T> {
 
     private T[] myArray;
     private int size = 0;
 
-    public MyArrayBasedList (int length){
-        myArray = (T[]) new Object[length];
+    public MyArrayBasedList(Class<T> classToken, int length) {
+        myArray = (T[]) Array.newInstance(classToken, length);
     }
 
 
-    public static <T> MyArrayBasedList<T> of(T... values) {
-        MyArrayBasedList<T> result = new MyArrayBasedList<>(values.length);
+    public static MyArrayBasedList<Integer> of(Integer... values) {
+        return of(Integer.class, values);
+    }
+
+    public static MyArrayBasedList<String> of(String... values) {
+        return of(String.class, values);
+    }
+
+    public static <T extends Comparable<T>> MyArrayBasedList<T> of(Class<T> classToken, T... values) {
+        MyArrayBasedList<T> result = new MyArrayBasedList<>(classToken, values.length);
 
         for (T value : values) {
             result.append(value);
@@ -38,12 +46,17 @@ public class MyArrayBasedList<T> implements MyList<T>{
 
     @Override
     public T last() {
-        return this.myArray[this.size];
+        return this.myArray[this.size - 1];
     }
 
     @Override
     public boolean isEmpty() {
         return size == 0;
+    }
+
+    public MyArrayBasedList sort() {
+        Arrays.sort(this.myArray);
+        return this;
     }
 
     @Override
@@ -79,5 +92,66 @@ public class MyArrayBasedList<T> implements MyList<T>{
     @Override
     public boolean any(Function<T, Boolean> predicate) {
         return false;
+    }
+
+    @Override
+    public String toString() {
+        String result = "[";
+
+        String delimiter = "";
+
+        for (T value : this.myArray) {
+            result = result + delimiter + value;
+            delimiter = ", ";
+        }
+
+        result = result + "]";
+
+        return result;
+    }
+
+    public boolean contains(T value) {
+        int start = 0;
+        int end = this.size - 1;
+        int mid = (start + end) / 2;
+
+        // BINARY SEARCH
+        while (start <= end) {
+            if (this.myArray[mid].compareTo(value) < 0) {
+                start = mid + 1;
+            } else if (this.myArray[mid].compareTo(value) == 0) {
+                return true;
+            } else {
+                end = mid - 1;
+            }
+            mid = (start + end) / 2;
+        }
+        return false;
+    }
+
+    public static <T extends Comparable <T>> int findPosition(T[] sortedArray, T value, int size){
+        int start = 0;
+        int end = size - 1;
+        int mid = (start + end)/2;
+
+        while (start <= end) {
+            if (sortedArray[mid].compareTo(value) < 0){
+                start = mid + 1;
+            } else if (sortedArray[mid].compareTo(value) == 0) {
+                return mid;
+            } else {
+                end = mid - 1;
+            }
+            mid = (start + end) / 2;
+        }
+
+        return start;
+    }
+
+    public static <T> void insert(T[] myArray, T value, int position, int size) {
+        for (int i = size - 1; i >= position; i--) {
+            myArray[i] = myArray[i - 1];
+        }
+        myArray[position] = value;
     }
 }
