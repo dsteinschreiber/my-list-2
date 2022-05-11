@@ -75,10 +75,6 @@ public class MyArrayBasedListTest {
         System.out.println(MyArrayBasedList.findPosition(test,9, 5)); // 4
 
 
-
-
-
-
     }
 
 }

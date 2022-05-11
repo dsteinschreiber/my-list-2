@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff17e244-cea2-4b4c-a27e-f76a801299aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MySortedList.java" afterDir="false" />
+    <list default="true" id="ff17e244-cea2-4b4c-a27e-f76a801299aa" name="Changes" comment="Added methods in MyArrayBasedList&#10;Added Class MySortedList">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/MySortedListTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyArrayBasedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyArrayBasedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MySortedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MySortedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MyArrayBasedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MyArrayBasedListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,22 +41,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="JUnit.MyArrayBasedListTest.randomTest">
-    <configuration name="MyArrayBasedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="my-list-2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.MyArrayBasedListTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.MySortedListTest.addTest">
     <configuration name="MyArrayBasedListTest.containsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="my-list-2" />
       <extension name="coverage">
@@ -120,13 +106,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MySortedListTest.addTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-list-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MySortedListTest" />
+      <option name="METHOD_NAME" value="addTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MySortedListTest.addTest" />
         <item itemvalue="JUnit.MyArrayBasedListTest.randomTest" />
         <item itemvalue="JUnit.MyArrayBasedListTest.containsTest" />
         <item itemvalue="JUnit.MyArrayBasedListTest.isEmptyTest" />
         <item itemvalue="JUnit.MyArrayBasedListTest.sortTest" />
-        <item itemvalue="JUnit.MyArrayBasedListTest" />
       </list>
     </recent_temporary>
   </component>
@@ -141,8 +143,16 @@
       <workItem from="1652139175035" duration="12000" />
       <workItem from="1652139334434" duration="26000" />
       <workItem from="1652139396245" duration="6000" />
-      <workItem from="1652139410277" duration="12703000" />
+      <workItem from="1652139410277" duration="14825000" />
     </task>
+    <task id="LOCAL-00001" summary="Added methods in MyArrayBasedList&#10;Added Class MySortedList">
+      <created>1652223159363</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652223159363</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,5 +168,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added methods in MyArrayBasedList&#10;Added Class MySortedList" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added methods in MyArrayBasedList&#10;Added Class MySortedList" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/MyArrayBasedList.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

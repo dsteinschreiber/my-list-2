@@ -7,8 +7,8 @@ import java.util.function.Function;
 
 public class MyArrayBasedList<T extends Comparable<T>> implements MyList<T> {
 
-    private T[] myArray;
-    private int size = 0;
+    protected T[] myArray;
+    protected int size = 0;
 
     public MyArrayBasedList(Class<T> classToken, int length) {
         myArray = (T[]) Array.newInstance(classToken, length);
@@ -150,7 +150,7 @@ public class MyArrayBasedList<T extends Comparable<T>> implements MyList<T> {
 
     public static <T> void insert(T[] myArray, T value, int position, int size) {
         for (int i = size - 1; i >= position; i--) {
-            myArray[i] = myArray[i - 1];
+            myArray[i+1] = myArray[i];
         }
         myArray[position] = value;
     }
