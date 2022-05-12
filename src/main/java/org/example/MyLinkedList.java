@@ -93,6 +93,15 @@ public class MyLinkedList<T> implements MyList<T> {
     }
 
     @Override
+    public T pop(){
+        T result = this.firstElement.value;
+
+        this.firstElement = this.firstElement.next;
+
+        return result;
+    }
+
+    @Override
     public boolean equals(Object object) {
 
         if (object == null) {

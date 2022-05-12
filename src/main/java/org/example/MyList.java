@@ -21,6 +21,8 @@ public interface MyList<T> extends Iterable<T> {
 
     MyList<T> push(T value);
 
+    T pop();
+
     @Override
     default Iterator<T> iterator() {
 //        return new MyListIterator<T>(this);
